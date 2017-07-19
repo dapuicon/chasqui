@@ -5,13 +5,13 @@ const subscribe = (subscriptor, callback) => {
 };
 
 const publish = (message) => {
-    let properties = Object.Keys(window.subscritors);
+    let properties = Object.keys(window.subscritors);
     for (let index = 0; index < properties.length; index++) {
         window.subscritors[properties[index]](message);
     }
 }
 
-module.export = {
+export default {
     subscribe: subscribe,
     publish: publish
 }
