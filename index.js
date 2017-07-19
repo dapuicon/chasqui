@@ -5,7 +5,7 @@ const subscribe = (subscriptor, callback) => {
 };
 
 const publish = (message) => {
-    let properties = Object.keys(window.subscritors);
+    let properties = Object.getOwnPropertyNames(window.subscritors);
     for (let index = 0; index < properties.length; index++) {
         window.subscritors[properties[index]](message);
     }
